@@ -1,0 +1,26 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Website</title>
+    <link rel="stylesheet" href={% static "core/styles.css" %}>
+  </head>
+  <body>
+    <div class="navbar">
+      <a href="#about">About Me</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#contact" style="float: right">Contact Me</a>
+    </div>
+
+    {% block content %} {% endblock content %}
+    <div style="padding: 20px">
+      <p>
+        Este es un ejemplo de un navbar con enlaces a "About Me", "Portfolio" y
+        "Contact Me".
+      </p>
+    </div>
+  </body>
+</html>
