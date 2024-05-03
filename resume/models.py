@@ -10,6 +10,8 @@ class PersonalData(SingletonModel):
     birthday = models.DateField(blank=True, null=True)
     nacionality = models.CharField(max_length=100, null=True)
     about_me = models.TextField(blank=True)
+    short_description = models.TextField(blank=True, max_length=200)
+    profile_picture = models.ImageField(upload_to='profile/', blank=True, null=True)
     class Meta:
         verbose_name = "My personal data"
 
@@ -24,7 +26,7 @@ class PersonalData(SingletonModel):
 class Skill(models.Model):
     skill = models.CharField(max_length=100)
     main_skill = models.BooleanField(default=False)
-    logo = models.ImageField(upload_to='media/skills/', blank=True, null=True)
+    logo = models.ImageField(upload_to='skills/', blank=True, null=True)
     
     def __str__(self):
         return f"{self.skill}"

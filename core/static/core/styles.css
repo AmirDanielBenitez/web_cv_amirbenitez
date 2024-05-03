@@ -1,27 +1,133 @@
-.navbar {
-    background-color: #333;
-    overflow: hidden;
+:root {
+    --main-color: #ffb6c1;
+    --background-color: #333;
 }
 
-.navbar a {
-    float: left;
-    display: block;
+body {
+    font-family: "Arial", sans-serif; 
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+
+}
+
+ .navbar a {
     color: white;
-    text-align: center;
-    padding: 14px 20px;
-text-decoration: none;
+    text-decoration: none;
+    margin: 0 10px;
 }
 
 .navbar a:hover {
-background-color: #ddd;
-color: black;
-}
+    color: #ffb6c1;
+} 
 
 body {
 background-color: #333; 
 color: white; 
 }
 
-h1 {
+.highlight{
     color: #ffb6c1;
+   font-size: 1.5em;
+}
+
+.description-card{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 5em;
+}
+
+.description-left-column{
+    display: flex ;
+    flex-direction: column; 
+    padding: 20px 0;
+}
+
+.description-right{
+    display: flex ;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+h1, h2 {
+    margin: 0;
+}
+
+p {
+    margin: 0;
+}
+
+.rounded-line-button{
+    background-color: var(--background-color);
+    color: var(--main-color);
+    border: 2px solid var(--main-color);
+    border-radius: 4px;
+    width: fit-content;
+    padding: 7px 10px;
+}
+
+.rounded-line-button:hover{
+    background-color: var(--main-color);
+    color: var(--background-color);
+    border-radius: 4px;
+}
+
+.separator{
+    margin: 10px 0;
+}
+
+.profile-picture{
+    width: 500px;
+    height: auto;
+    filter: grayscale(100%);
+}
+
+.social-media {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.social-link {
+    display: block; 
+    flex-direction: row;
+    margin-bottom: 10px; 
+    color: white; 
+    font-size: 35px;
+}
+
+.social-link:hover {
+    color: var(
+        --main-color
+    );
+}
+
+.line {
+    border: none; 
+    width: 3px; 
+    height: 4em; 
+    background-color: var(--main-color); 
+    margin: 10px 0; 
+}
+
+@media screen and (max-width: 768px) {
+    .description-card {
+        flex-direction: column;
+        margin: 0 20px;
+    }
+
+    .description-right {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .social-media{
+        flex-direction: row;
+    }
+    .social-link{
+        margin: 0 10px;
+    }
 }

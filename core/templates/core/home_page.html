@@ -1,4 +1,32 @@
-{% extends "core/base.html" %} {% block content %}
-<h1>I'm {{name}}</h1>
-<p>This is a sample text.</p>
+{% extends "core/base.html" %} {% load static %} {% block content %}
+<div class="description-card">
+  <div class="description-left-column">
+    <h1>I'm <span class="highlight">{{name}}</span></h1>
+    <h3>{{  short_description }}</h3>
+    <button class="rounded-line-button separator">Contact me</button>
+  </div>
+  <div class="description-right">
+    <img
+      class="profile-picture"
+      src="/media/profile/cv_picture_only.png"
+      alt="Profile picture"
+    />
+    <div class="social-media">
+      <hr class="line"></hr>
+      <a href="https://wa.me/tunumero" target="_blank" class="social-link">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+      <a href="mailto:tucorreo@example.com" target="_blank" class="social-link"
+      ><i class="fas fa-envelope"></i
+        ></a>
+        <a
+        href="https://www.linkedin.com/in/tuperfil"
+        target="_blank"
+        class="social-link"
+        ><i class="fab fa-linkedin"></i
+          ></a>
+          <hr class="line"></hr>
+    </div>
+  </div>
+</div>
 {% endblock content %}

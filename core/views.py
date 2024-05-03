@@ -10,5 +10,6 @@ class HomePage(TemplateView):
         context = super().get_context_data(**kwargs)
         personalData = PersonalData.get_solo()
         context["name"] = f'{personalData.first_name} {personalData.last_name}'
+        context["short_description"] = personalData.short_description
         return context
     
