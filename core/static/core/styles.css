@@ -13,9 +13,12 @@ body {
 
 }
 
+a {
+    text-decoration: none;
+}
+
  .navbar a {
     color: white;
-    text-decoration: none;
     margin: 0 10px;
 }
 
@@ -52,13 +55,19 @@ color: white;
     align-items: flex-end;
 }
 
-h1, h2 {
+.short-description{
+    margin: 5px 0 20px 0;
+}
+
+h1, h2, h3{
     margin: 0;
 }
 
 p {
-    margin: 0;
+    margin:  5px 0;
 }
+
+
 
 .rounded-line-button{
     background-color: var(--background-color);
@@ -67,12 +76,14 @@ p {
     border-radius: 4px;
     width: fit-content;
     padding: 7px 10px;
+    
 }
 
 .rounded-line-button:hover{
     background-color: var(--main-color);
     color: var(--background-color);
     border-radius: 4px;
+    cursor: pointer;
 }
 
 .separator{
@@ -111,6 +122,25 @@ p {
     height: 4em; 
     background-color: var(--main-color); 
     margin: 10px 0; 
+}
+
+.line-horizontal {
+    border: none; 
+    height: 3px; 
+    width: 10em; 
+    min-width: 50px;
+    background-color: var(--main-color); 
+    margin: 10px 0; 
+}
+
+.about-me{
+    display: flex;
+    flex-direction: row;
+}
+
+.about-me-content{
+    margin: 0 10px;
+    line-height: 25px;
 }
 
 @media screen and (max-width: 768px) {

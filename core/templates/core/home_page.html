@@ -2,8 +2,13 @@
 <div class="description-card">
   <div class="description-left-column">
     <h1>I'm <span class="highlight">{{name}}</span></h1>
-    <h3>{{  short_description }}</h3>
-    <button class="rounded-line-button separator">Contact me</button>
+    <h3 class="short-description">{{  short_description }}</h3>
+    <h3 class="highlight"> About me </h3>
+    <div class= "about-me">
+      <hr class="line-horizontal"></hr>
+      <p class="about-me-content">{{  about_me }}</p>
+    </div>
+    <a class="rounded-line-button separator" href="mailto:{{contact_data.email}}?subject=Developer {{name}}">Contact me</a>
   </div>
   <div class="description-right">
     <img
@@ -13,14 +18,14 @@
     />
     <div class="social-media">
       <hr class="line"></hr>
-      <a href="https://wa.me/tunumero" target="_blank" class="social-link">
+      <a href="{{contact_data.whatsapp_url}}" target="_blank" class="social-link">
         <i class="fab fa-whatsapp"></i>
       </a>
-      <a href="mailto:tucorreo@example.com" target="_blank" class="social-link"
+      <a href="mailto:{{contact_data.email}}?subject=Developer {{name}}" target="_blank" class="social-link"
       ><i class="fas fa-envelope"></i
         ></a>
         <a
-        href="https://www.linkedin.com/in/tuperfil"
+        href="{{contact_data.linkedin}}"
         target="_blank"
         class="social-link"
         ><i class="fab fa-linkedin"></i
