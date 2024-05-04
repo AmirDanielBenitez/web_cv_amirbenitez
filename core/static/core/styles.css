@@ -1,6 +1,7 @@
 :root {
     --main-color: #ffb6c1;
     --background-color: #333;
+    --background-item-color: #565555;
 }
 
 body {
@@ -34,6 +35,10 @@ color: white;
 .highlight{
     color: #ffb6c1;
    font-size: 1.5em;
+}
+
+.highlight-color{
+    color: #ffb6c1;
 }
 
 .description-card{
@@ -143,6 +148,40 @@ p {
     line-height: 25px;
 }
 
+.my-skills{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0 0 0;
+}
+.my-skills-content{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.skill-item{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    width: 180px;
+    height: 180px;
+    margin: 10px;
+    border-radius: 10px;
+    background-color: var(--background-item-color);
+}
+
+.skill-item[main="True"]{
+    background-color: var(--main-color);
+}
+
+.skill-picture{
+    height: auto;
+    width: 8em; 
+}
+
 @media screen and (max-width: 768px) {
     .description-card {
         flex-direction: column;
@@ -159,5 +198,12 @@ p {
     }
     .social-link{
         margin: 0 10px;
+    }
+    .skill-item{
+        height: 5.5em;
+        width: 5.5em;
+    }
+    .skill-picture{
+        width: 3em;
     }
 }

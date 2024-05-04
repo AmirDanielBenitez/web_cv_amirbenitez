@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views import View
 from django.views.generic.base import TemplateView
-from resume.models import PersonalData
+from resume.models import PersonalData, Skill
 from contact.models import ContactData
 # Create your views here.
 class HomePage(TemplateView):
@@ -11,9 +11,10 @@ class HomePage(TemplateView):
         context = super().get_context_data(**kwargs)
         personalData = PersonalData.get_solo()
         contactData = ContactData.get_solo()
+        skills = Skill.objects.all()
         context["name"] = f'{personalData.first_name} {personalData.last_name}'
-        context["short_description"] = personalData.short_description
-        context["about_me"] = personalData.about_me
+        context["personal_data"] = personalData
         context["contact_data"] = contactData
+        context["skills"] = skills
         return context
     

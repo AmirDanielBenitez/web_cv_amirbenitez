@@ -2,18 +2,18 @@
 <div class="description-card">
   <div class="description-left-column">
     <h1>I'm <span class="highlight">{{name}}</span></h1>
-    <h3 class="short-description">{{  short_description }}</h3>
+    <h3 class="short-description">{{  personal_data.short_description }}</h3>
     <h3 class="highlight"> About me </h3>
     <div class= "about-me">
       <hr class="line-horizontal"></hr>
-      <p class="about-me-content">{{  about_me }}</p>
+      <p class="about-me-content">{{  personal_data.about_me }}</p>
     </div>
     <a class="rounded-line-button separator" href="mailto:{{contact_data.email}}?subject=Developer {{name}}">Contact me</a>
   </div>
   <div class="description-right">
     <img
       class="profile-picture"
-      src="/media/profile/cv_picture_only.png"
+      src="/media/{{ personal_data.profile_picture }}"
       alt="Profile picture"
     />
     <div class="social-media">
@@ -33,5 +33,20 @@
           <hr class="line"></hr>
     </div>
   </div>
+</div>
+<div class="my-skills">
+  <h1 class="highlight-color"> My skills </h1>
+  <div class="my-skills-content">
+    {% for skill in skills %}
+    <div class="skill-item" main="{{skill.main_skill}}">
+      <img
+      class="skill-picture"
+      src="/media/{{skill.logo}}"
+      alt="{{skill.skill}}"
+    />
+    <h3>{{skill.skill}}</h3>
+    </div>
+    {% endfor %}
+  </div>  
 </div>
 {% endblock content %}
