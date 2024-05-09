@@ -49,4 +49,29 @@
     {% endfor %}
   </div>  
 </div>
+<div class="my-experiences">
+  <h1 class="highlight-color"> Experience </h1>
+  <div class="my-experiences-content">
+    {% for experience in experiences %}
+      <div class="experience-item" currently="{{ experience.current_job }}">
+        <div class="year-experience">
+          <div class="year-column">
+            <div class="year-tag">{{ experience.get_finish_date }}</div>
+            <div class="year-tag">{{ experience.get_start_date }} </div>
+          </div>
+          <div class="line-circle">
+            <div class="circle-year"></div>
+            <div class="line-year"></div>
+            <div class="circle-year"></div>
+          </div>
+        </div>
+        <div class="content-experience">
+            <h2>{{ experience.job_title }}</h2>
+            <h3>{{ experience.company }}</h3>
+            {{ experience.description | safe  }}
+        </div>
+      </div>  
+    {% endfor %}
+  </div>  
+</div>
 {% endblock content %}

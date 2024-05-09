@@ -182,6 +182,75 @@ p {
     width: 8em; 
 }
 
+.my-experiences{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0 0 0;
+    background-color: var(--background-item-color);
+}
+.my-experiences-content{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+  
+.experience-item {
+    display: flex;
+    align-items: start;
+    margin: 10px;
+    width: 500px;
+}
+
+.year-experience {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.year-column{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: space-between;
+    height: 100%; 
+    margin: 0 10px;
+}
+
+.line-circle{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%; 
+    
+}
+
+.year-tag{
+    background-color: #333;
+    padding: 10px;
+    border-radius: 10%;
+    text-align: center;
+}
+
+.line-year {
+    height: 100%;
+    width: 2px; 
+    background-color: var(--main-color);
+    margin: 5px 0;
+}
+
+.circle-year {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: var(--main-color);   
+}
+
+.content-experience {
+    margin: 0 10px; 
+}
+
 @media screen and (max-width: 768px) {
     .description-card {
         flex-direction: column;
@@ -205,5 +274,9 @@ p {
     }
     .skill-picture{
         width: 3em;
+    }
+
+    .experience-item {
+        width: 400px;
     }
 }

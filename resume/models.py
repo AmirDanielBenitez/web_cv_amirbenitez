@@ -1,6 +1,7 @@
 from django.db import models
 from datetime import date
 from solo.models import SingletonModel
+from ckeditor.fields import RichTextField
 
 # Create your models here.
 
@@ -34,10 +35,24 @@ class Skill(models.Model):
 class Experience(models.Model):
     job_title = models.CharField(max_length=150)
     company = models.CharField(max_length=100)
-    description = models.TextField()
+    description = RichTextField()
     start_date = models.DateField(blank=True, null=True)
     finish_date = models.DateField(blank=True, null=True)
     current_job = models.BooleanField(default=False)
     
     def __str__(self):
         return f"{self.job_title} {self.company}"
+    
+    def get_start_date(self):
+        if self.start_date:
+            return self.start_date.strftime("%B %Y")
+        else:
+            return "Unknown"
+
+    def get_finish_date(self):
+        if self.current_job:
+            return "Current job"
+        elif self.finish_date:
+            return self.finish_date.strftime("%B %Y")
+        else:
+            return "Present"
