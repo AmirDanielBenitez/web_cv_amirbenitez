@@ -3,6 +3,7 @@ from django.views import View
 from django.views.generic.base import TemplateView
 from resume.models import PersonalData, Skill, Experience
 from contact.models import ContactData
+from portfolio.models import Project
 # Create your views here.
 class HomePage(TemplateView):
     template_name='core/home_page.html'
@@ -13,10 +14,12 @@ class HomePage(TemplateView):
         contactData = ContactData.get_solo()
         skills = Skill.objects.all()
         experiences = Experience.objects.order_by('start_date')
+        projects = Project.objects.all()
         context["name"] = f'{personalData.first_name} {personalData.last_name}'
         context["personal_data"] = personalData
         context["contact_data"] = contactData
         context["skills"] = skills
         context["experiences"] = experiences
+        context["projects"] = projects
         return context
     
