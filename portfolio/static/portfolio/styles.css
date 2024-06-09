@@ -46,6 +46,148 @@
     width: 3em; 
 }
 
+.separator-margin{
+    margin: 15px 0 25px 0;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+}
+
+.btn-google-play {
+    background-color: #34A853;
+}
+
+.btn-app-store {
+    background-color: #000;
+}
+
+.btn-website {
+    background-color: #4285F4;
+}
+
+.btn i {
+    margin-right: 8px;
+}
+
+.divider {
+    height: 2px; 
+    background-color: #4285F4; 
+    width: 100%;
+    margin: 20px 0; 
+    border: none;
+}
+
+.project-contents {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
+.project-content{
+    width: 300;
+    height: 500;
+}
+
+.content-item-pp {
+    position: relative;
+    margin: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: var(--background-item-color);
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.content-content-pp {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.highlight-color {
+    color: var(--highlight-color);
+}
+
+.slider-wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 300px; /* Ajusta según sea necesario */
+  }
+  
+  .slides-container {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Asegura que solo una imagen sea visible */
+    scroll-behavior: smooth; /* Suaviza la transición entre slides */
+  }
+  
+  .slide {
+    flex: 0 0 100%; 
+    transition: transform 0.5s ease; 
+    box-sizing: border-box;
+  }
+  
+  .project-picture-slider-pp {
+    width: 100%;
+    height: auto;
+  }
+  
+  .slide-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 1;
+  }
+  
+  #slide-arrow-prev {
+    left: 0;
+  }
+  
+  #slide-arrow-next {
+    right: 0;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .slide-arrow {
+      font-size: 1.5rem;
+      padding: 0.25rem;
+    }
+  
+    .project-picture-slider-pp {
+      width: 100%;
+      height: auto;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .slide-arrow {
+      font-size: 1rem;
+      padding: 0.2rem;
+    }
+  
+    .project-picture-slider-pp {
+      width: 100%;
+      height: auto;
+    }
+  }
+
 @media screen and (max-width: 768px) {
     .project-item-pp {
         flex-direction: column;
@@ -55,6 +197,17 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-    }    
-   
+    }  
+    .slider-wrapper {
+        position: relative;
+        overflow: hidden;
+        width: 80%;
+      }
+
+    .content-item-pp{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
 }

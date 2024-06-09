@@ -14,7 +14,7 @@
       <div class="project-content-pp">
         <h1 class="separator">{{project.name}}</h1>
         <div class="my-skills-pp separator">
-          {% for skill in skills %}
+          {% for skill in project.skills.all %}
           <div class="skill-item-pp">
             <img
               class="skill-picture"
@@ -25,7 +25,25 @@
           </div>
           {% endfor %}
         </div>
-        {{project.description | safe}}
+        <div>{{project.description | safe}}</div>
+        <div class="button-container separator-margin">
+          {% if project.google_play_url %}
+          <a href="{{ project.google_play_url }}" class="btn btn-google-play">
+            <i class="fab fa-google-play"></i> Google Play
+          </a>
+          {% endif %} {% if project.appstore_url %}
+          <a href="{{ project.appstore_url }}" class="btn btn-app-store">
+            <i class="fab fa-apple"></i> App Store
+          </a>
+          {% endif %} {% if project.project_url %}
+          <a href="{{ project.project_url }}" class="btn btn-website">
+            <i class="fas fa-globe"></i> Website
+          </a>
+          {% endif %}
+        </div>
+        <a class="rounded-line-button separator" href="{{project.id}}"
+          >See More</a
+        >
       </div>
     </div>
     {% endfor %}
