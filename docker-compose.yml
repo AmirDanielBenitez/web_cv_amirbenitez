@@ -9,7 +9,7 @@ services:
       - ./.env
   web:
     build: .
-    command: gunicorn --bind 0.0.0.0:8000 mi_proyecto.wsgi:application
+    command: gunicorn --bind 0.0.0.0:8000 web_cv_amirbenitez.wsgi:application
     volumes:
       - .:/code
       - media_volume:/code/media/
