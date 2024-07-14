@@ -93,6 +93,7 @@ DATABASES = {
     }
 }
 
+WSGI_APPLICATION = 'web_cv_amirbenitez.wsgi.application'
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
