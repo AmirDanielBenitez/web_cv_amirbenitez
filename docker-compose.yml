@@ -22,6 +22,8 @@ services:
       - POSTGRES_PASSWORD=postgres
     depends_on:
       - db
+    links:
+      - db:db
 
 volumes:
   postgres_data:
