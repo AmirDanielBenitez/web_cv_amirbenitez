@@ -50,17 +50,19 @@
   <h1 class="highlight-color"> Portfolio </h1>
   <div class="my-projects-content">
     {% for project in projects %}
-    <div class="project-item">
-        <img
-        class="project-picture"
-        src="/media/{{project.thumbnail}}"
-        alt="{{project.name}}"
-      />
-      <div class="project-content">
-        <h3>{{project.name}}</h3>
-        <p>{{project.short_description}}</p>
+    <a class="a-styleless" href="/portfolio/{{project.id}}">
+      <div class="project-item">
+          <img
+          class="project-picture"
+          src="/media/{{project.thumbnail}}"
+          alt="{{project.name}}"
+        />
+        <div class="project-content">
+          <h3>{{project.name}}</h3>
+          <p>{{project.short_description}}</p>
+        </div>
       </div>
-    </div>
+    </a>
     {% endfor %}
   </div>  
 </div>

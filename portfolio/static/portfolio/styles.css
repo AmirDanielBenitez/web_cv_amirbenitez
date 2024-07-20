@@ -86,14 +86,17 @@
 }
 
 .project-contents {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .project-content{
-    width: 300;
+    width: 100%;
     height: 500;
 }
 
@@ -120,7 +123,7 @@
 .slider-wrapper {
     position: relative;
     overflow: hidden;
-    width: 300px; /* Ajusta según sea necesario */
+    flex: 0 0 30%;
   }
   
   .slides-container {
@@ -128,8 +131,9 @@
     list-style: none;
     margin: 0;
     padding: 0;
-    overflow: hidden; /* Asegura que solo una imagen sea visible */
-    scroll-behavior: smooth; /* Suaviza la transición entre slides */
+    overflow: hidden; 
+    scroll-behavior: smooth; 
+    width: 100%;
   }
   
   .slide {

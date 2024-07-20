@@ -300,6 +300,17 @@ p {
     opacity: 1;
 }
 
+.a-styleless {
+    text-decoration: none; 
+    color: inherit; 
+  }
+  
+  .a-styleless:visited,
+  .a-styleless:active {
+    color: inherit;
+  }
+  
+
 @media screen and (max-width: 768px) {
     .description-card {
         flex-direction: column;

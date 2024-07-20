@@ -59,9 +59,7 @@
               </div>
               <button class="slide-arrow" id="slide-arrow-next">&#8250;</button>
             </section>
-            <div class="content-content-pp">
               <div>{{content.description | safe}}</div>
-            </div>
           </div>
         </div>
       {% endfor %}
@@ -71,19 +69,33 @@
 
 
 <script>
-  const slidesContainer = document.getElementById("slides-container");
-  const slide = document.querySelector(".slide");
-  const prevButton = document.getElementById("slide-arrow-prev");
-  const nextButton = document.getElementById("slide-arrow-next");
+  document.addEventListener("DOMContentLoaded", function() {
+    const contentSections = document.querySelectorAll(".slider-wrapper");
 
-  nextButton.addEventListener("click", () => {
-    const slideWidth = slide.clientWidth;
-    slidesContainer.scrollLeft += slideWidth;
-  });
+    contentSections.forEach(section => {
+      const slidesContainer = section.querySelector(".slides-container");
+      const slides = section.querySelectorAll(".slide");
+      const prevButton = section.querySelector(".slide-arrow#slide-arrow-prev");
+      const nextButton = section.querySelector(".slide-arrow#slide-arrow-next");
 
-  prevButton.addEventListener("click", () => {
-    const slideWidth = slide.clientWidth;
-    slidesContainer.scrollLeft -= slideWidth;
+      // Check if there is only one image in this content section
+      if (slides.length <= 1) {
+        prevButton.style.display = "none";
+        nextButton.style.display = "none";
+      }
+
+      const slide = slides[0];
+
+      nextButton.addEventListener("click", () => {
+        const slideWidth = slide.clientWidth;
+        slidesContainer.scrollLeft += slideWidth;
+      });
+
+      prevButton.addEventListener("click", () => {
+        const slideWidth = slide.clientWidth;
+        slidesContainer.scrollLeft -= slideWidth;
+      });
+    });
   });
 </script>
 {% endblock content %}

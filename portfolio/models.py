@@ -28,7 +28,7 @@ class Project (models.Model):
 class ProjectContent(models.Model):
     project = models.ForeignKey(Project, related_name='project_contents', on_delete=models.CASCADE)
     title = models.CharField(max_length=100)
-    description = models.TextField(blank=True)
+    description = RichTextField(blank=True)
 
     def __str__(self):
         return self.title
