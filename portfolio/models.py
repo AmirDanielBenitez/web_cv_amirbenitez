@@ -14,7 +14,7 @@ class Project (models.Model):
     name = models.CharField(max_length=100)
     short_description = models.CharField(max_length=150)
     description = RichTextField(blank=True)
-    thumbnail = models.ImageField(upload_to='media/portfolio/', blank=True, null=True)
+    thumbnail = models.ImageField(upload_to='portfolio/', blank=True, null=True)
     platform = models.CharField(max_length=10, choices=PLATFORM_CHOICES)
     skills = models.ManyToManyField(Skill)
     code_url = models.URLField(max_length=200, null=True, blank=True)
@@ -35,7 +35,7 @@ class ProjectContent(models.Model):
 
 class ProjectContentImage(models.Model):
     projectContent = models.ForeignKey(ProjectContent, related_name='images', on_delete=models.CASCADE)
-    image = models.ImageField(upload_to='media/portfolio/carousel_images/')
+    image = models.ImageField(upload_to='portfolio/carousel_images/')
 
     def __str__(self):
         return f"{self.projectContent.title} - Image"

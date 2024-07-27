@@ -7,7 +7,7 @@
     <div class="project-item-pp">
       <img
         class="project-picture-pp"
-        src="/media/{{project.thumbnail}}"
+        src="{{project.thumbnail.url}}"
         alt="{{project.name}}"
       />
       <div class="project-content-pp">
@@ -16,7 +16,7 @@
           <div class="skill-item-pp">
             <img
               class="skill-picture"
-              src="/media/{{skill.logo}}"
+              src="{{skill.logo.url}}"
               alt="{{skill.skill}}"
             />
             <h3>{{skill.skill}}</h3>
@@ -53,7 +53,7 @@
               <div class="slides-container" id="slides-container">
                 {% for image in content.images.all %}
                 <div class="slide">
-                  <img class="project-picture-slider-pp" src="/media/{{ image.image }}" alt="{{ content.title }}">
+                  <img class="project-picture-slider-pp" src="{{ image.image.url }}" alt="{{ content.title }}">
                 </div>
                 {% endfor %}
               </div>

@@ -13,7 +13,7 @@
   <div class="description-right">
     <img
       class="profile-picture"
-      src="/media/{{ personal_data.profile_picture }}"
+      src="{{ personal_data.profile_picture.url }}"
       alt="Profile picture"
     />
     <div class="social-media">
@@ -38,7 +38,7 @@
     <div class="skill-item" main="{{skill.main_skill}}">
       <img
       class="skill-picture"
-      src="/media/{{skill.logo}}"
+      src="{{skill.logo.url}}"
       alt="{{skill.skill}}"
     />
     <h3>{{skill.skill}}</h3>
@@ -54,7 +54,7 @@
       <div class="project-item">
           <img
           class="project-picture"
-          src="/media/{{project.thumbnail}}"
+          src="{{project.thumbnail.url}}"
           alt="{{project.name}}"
         />
         <div class="project-content">
