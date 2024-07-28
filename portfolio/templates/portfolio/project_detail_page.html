@@ -25,6 +25,11 @@
         </div>
         <div>{{project.description | safe}}</div>
         <div class="button-container separator-margin">
+          {% if project.code_url %}
+          <a href="{{ project.code_url }}" class="btn btn-github">
+            <i class="fab fa-github"></i> GitHub
+          </a>
+          {% endif %}
           {% if project.google_play_url %}
           <a href="{{ project.google_play_url }}" class="btn btn-google-play">
             <i class="fab fa-google-play"></i> Google Play

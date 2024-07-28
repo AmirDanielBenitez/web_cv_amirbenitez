@@ -312,6 +312,12 @@ p {
   
 
 @media screen and (max-width: 768px) {
+    .description-left-column{
+        display: flex ;
+        flex-direction: column; 
+        align-items: center;
+    }
+    
     .description-card {
         flex-direction: column;
         margin: 0 20px;
@@ -339,4 +345,15 @@ p {
     .experience-item {
         width: 400px;
     }
+
+    .my-skills-content, 
+    .my-projects-content, 
+    .my-experiences-content {
+    max-width: 100%;
+    justify-content: center; 
+    }
+
+    .profile-picture {
+        max-width: 100%;
+      }
 }
