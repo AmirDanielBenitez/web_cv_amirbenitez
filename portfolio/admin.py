@@ -18,6 +18,7 @@ class ProjectAdmin(admin.ModelAdmin):
     
 class ProjectContentAdmin(admin.ModelAdmin):
     list_display = ('title', 'project')
+    list_filter = ('project',)
     inlines = [ProjectContentImageInline]
 
 class ProjectContentImageAdmin(admin.ModelAdmin):
